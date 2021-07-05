@@ -1,0 +1,40 @@
+{
+  "name": "apolloserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run nodemon",
+    "nodemon": "nodemon --exec babel-node src",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "npm run lint -- --fix",
+    "commit": "npx git-cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JitenderJaiswalSuccessive/ApolloServer.git"
+  },
+  "author": "Jitender Jaiswal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JitenderJaiswalSuccessive/ApolloServer/issues"
+  },
+  "homepage": "https://github.com/JitenderJaiswalSuccessive/ApolloServer#readme",
+  "dependencies": {
+    "@graphql-tools/load-files": "^6.3.2",
+    "@graphql-tools/merge": "^6.2.14",
+    "apollo-server-express": "^2.25.2",
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "graphql": "^15.5.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/node": "^7.14.7",
+    "@babel/preset-env": "^7.14.7",
+    "nodemon": "^2.0.9"
+  }
+}
