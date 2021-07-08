@@ -3,6 +3,7 @@ const getMyProfile = () => {
       id: '1',
       name: 'Jitender',
       email: 'jitender.jaiswal@successive.tech',
+      role: 'trainee',
    }
 };
 
@@ -16,6 +17,7 @@ query {
     id,
     name,
     email,
+    role,
   }
 }
 */

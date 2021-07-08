@@ -36,6 +36,7 @@ class Server {
     this.server = new ApolloServer({typeDefs, resolvers});
     this.server.applyMiddleware({ app });
     this.httpServer = createServer(app);
+    this.server.installSubscriptionHandlers(this.httpServer);
     this.run();
   };
 
