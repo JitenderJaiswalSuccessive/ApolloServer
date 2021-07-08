@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import { UserAPI } from './datasource';
 import { ApolloServer } from 'apollo-server-express';
 import { createServer } from 'http';
 
@@ -33,7 +34,15 @@ class Server {
   setupApolloServer = (schema) => {
     const { app } = this;
     const { resolvers, typeDefs } = schema;
-    this.server = new ApolloServer({typeDefs, resolvers});
+    this.server = new ApolloServer({
+      typeDefs, 
+      resolvers,
+      dataSources: () => {
+        return { 
+          userAPI : new UserAPI(),
+        };
+      }
+    });
     this.server.applyMiddleware({ app });
     this.httpServer = createServer(app);
     this.server.installSubscriptionHandlers(this.httpServer);

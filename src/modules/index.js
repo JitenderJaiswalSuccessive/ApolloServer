@@ -1,7 +1,7 @@
 import { mergeTypeDefs } from '@graphql-tools/merge';
 import { loadFilesSync } from '@graphql-tools/load-files';
 import path from 'path';
-import { userQuery } from './user';
+import { userQuery, userMutation } from './user';
 import { traineeQuery, traineeMutation, traineeSubscription } from './trainee';
 
 const typeArray = loadFilesSync(path.join(__dirname, './**/*.graphql'));
@@ -12,6 +12,7 @@ const Query = {
   ...traineeQuery,
 }
 const Mutation = {
+  ...userMutation,
   ...traineeMutation,
 }
 const Subscription = {

@@ -50,6 +50,7 @@ class User {
      getUser(id) {
        return this.users.get(Number(id));
      }
+
    }
    
    export default new User();
